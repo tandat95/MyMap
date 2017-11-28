@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e6e6e6">
+
+
+    <LinearLayout
+        android:id="@+id/stub_suggess_search"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="70dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="0.0px"
+            app:cardElevation="5dp"
+            app:cardPreventCornerOverlap="false">
+
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                android:scrollbars="none"
+                android:visibility="visible">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TableRow>
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="#FFFFFF"
+                            android:drawableTop="@drawable/ic_restaurant_30dp"
+                            android:text="Nhà hàng"
+                            android:textSize="9sp" />
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="#FFFFFF"
+                            android:drawableTop="@drawable/ic_ev_station_30dp"
+                            android:text="Cây xăng"
+                            android:textSize="9sp" />
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="#FFFFFF"
+                            android:drawableTop="@drawable/ic_directions_bus_30dp"
+                            android:text="Trạm bus"
+                            android:textSize="9sp" />
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="#FFFFFF"
+                            android:drawableTop="@drawable/ic_local_cafe_red_30dp"
+                            android:text="Cafe"
+                            android:textSize="9sp" />
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="#FFFFFF"
+                            android:drawableTop="@drawable/ic_local_mall_red_30dp"
+                            android:text="Shop quần áo"
+                            android:textSize="9sp" />
+
+                    </TableRow>
+
+                    <TableRow>
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="#FFFFFF"
+                            android:drawableTop="@drawable/ic_local_atm_30dp"
+                            android:text="ATM"
+                            android:textSize="9sp" />
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="#FFFFFF"
+                            android:drawableTop="@drawable/ic_hotel_30dp"
+                            android:text="Khách sạn"
+                            android:textSize="9sp" />
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="#FFFFFF"
+                            android:drawableTop="@drawable/ic_local_parking_red_30dp"
+                            android:text="Đỗ xe"
+                            android:textSize="9sp" />
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="#FFFFFF"
+                            android:drawableTop="@drawable/ic_local_grocery_store_red_30dp"
+                            android:text="Tạp hóa"
+                            android:textSize="9sp" />
+
+                    </TableRow>
+
+
+                </TableLayout>
+
+
+            </HorizontalScrollView>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:minHeight="80dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="16dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="0.0px"
+            app:cardElevation="5dp"
+            app:cardPreventCornerOverlap="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="#e9e9e9">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@color/colorPrimary"
+                    android:dividerHeight="1dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Lịch sử tìm kiếm"
+                        android:layout_margin="16dp"
+                        android:textColor="@color/colorPrimary"
+                        android:textStyle="bold" />
+                </LinearLayout>
+                <ListView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </ListView>
+
+
+            </LinearLayout>
+
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+    <ListView
+        android:layout_marginTop="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
+    </ListView>
+</FrameLayout>

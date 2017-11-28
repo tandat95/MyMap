@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="100">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="20"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical"
+        android:weightSum="100"
+        tools:ignore="RtlSymmetry">
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="70"
+            android:weightSum="100"
+            tools:ignore="NestedWeights">
+
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="3dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="15"
+                android:layout_marginStart="3dp"
+                tools:ignore="NestedWeights">
+
+                <ImageButton
+                    android:layout_margin="5dp"
+                    android:id="@+id/button_findStreetBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:src="@drawable/ic_arrow_back_24dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="65"
+                android:orientation="vertical"
+                android:weightSum="100">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="50"
+                    android:weightSum="100">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="10"
+                        android:drawableLeft="@drawable/ic_flag"
+                        android:drawableStart="@drawable/ic_flag" />
+
+                    <EditText
+                        android:id="@+id/editext_searchA"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="90"
+                        android:background="#89bfbfbf"
+                        android:focusable="false"
+                        android:hint="Vị trí của tôi"
+                        android:maxLines="1"
+                        android:inputType="none"
+                        android:textColor="#fff"
+                        android:textColorHint="#e6dada"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="50"
+                    android:weightSum="100">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="10"
+                        android:drawableLeft="@drawable/ic_racing_flag"
+                        android:drawableStart="@drawable/ic_racing_flag"
+                        android:layout_marginEnd="5dp" />
+
+                    <EditText
+                        android:id="@+id/editext_searchB"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="90"
+                        android:background="#89BFBFBF"
+                        android:focusable="false"
+                        android:hint="Chọn điểm đến"
+                        android:maxLines="1"
+                        android:inputType="none"
+                        android:textColor="#fff"
+                        android:textColorHint="#e6dada"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="20"
+                tools:ignore="RtlSymmetry">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_import_export_24dp"
+                    android:drawableStart="@drawable/ic_import_export_24dp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="30"
+            android:paddingBottom="10dp"
+            android:weightSum="100">
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="25"
+                android:background="@color/colorPrimary"
+
+                android:src="@drawable/ic_directions_walk_black_24dp" />
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="25"
+                android:background="@color/colorPrimary"
+
+                android:src="@drawable/ic_motorcycle_black_24dp" />
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="25"
+                android:background="@color/colorPrimary"
+                android:src="@drawable/ic_directions_car_black_24dp" />
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="25"
+                android:background="@color/colorPrimary"
+                android:src="@drawable/ic_directions_bus_black_24dp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_weight="80"-->
+        <!--android:background="#dfdfdf"-->
+        <!--android:visibility="invisible">-->
+
+        <!--<android.support.v7.widget.CardView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_marginBottom="16dp"-->
+            <!--android:layout_marginLeft="8dp"-->
+            <!--android:layout_marginRight="8dp"-->
+            <!--android:layout_marginTop="16dp"-->
+            <!--android:clipChildren="false"-->
+            <!--android:clipToPadding="false"-->
+            <!--android:divider="@android:color/transparent"-->
+            <!--android:dividerHeight="0.0px"-->
+            <!--android:minHeight="80dp"-->
+            <!--app:cardElevation="5dp"-->
+            <!--app:cardPreventCornerOverlap="false">-->
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:orientation="vertical">-->
+
+                <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:background="#dfdfdf"-->
+                    <!--android:divider="@color/colorPrimary"-->
+                    <!--android:dividerHeight="1dp">-->
+
+                    <!--<TextView-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_margin="10dp"-->
+                        <!--android:text="Lịch sử tìm kiếm"-->
+                        <!--android:textColor="@color/colorPrimary"-->
+                        <!--android:textStyle="bold" />-->
+                <!--</LinearLayout>-->
+
+                <!--<ListView-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content">-->
+
+                <!--</ListView>-->
+
+
+            <!--</LinearLayout>-->
+
+
+        <!--</android.support.v7.widget.CardView>-->
+    <!--</LinearLayout>-->
+
+
+</LinearLayout>
