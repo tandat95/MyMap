@@ -1,5 +1,6 @@
 package com.vbd.mapexam.view.activity;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.Fragment;
@@ -19,7 +20,7 @@ import android.support.design.widget.BottomSheetDialog;
 import android.support.design.widget.BottomSheetDialogFragment;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.v4.content.ContextCompat;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -176,7 +177,7 @@ public class MainActivity extends AppCompatActivity
         fabMyLocation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (map!=null) {
+                if (map != null) {
                     map.clear();
                     map.addMarker(new MarkerOptions().position(mylocation).icon(iconMylocation));
                     map.easeCamera(CameraUpdateFactory.newLatLngZoom(mylocation, 15));
@@ -187,6 +188,8 @@ public class MainActivity extends AppCompatActivity
 
         //define userInfoPf.xml
         userInfoPf = getSharedPreferences(Config.USER_INFO_RF_NAME, MODE_PRIVATE);
+        iconMylocation = IconFactory.getInstance(this).fromResource(R.drawable.ic_start);
+        getLocation();
     }
 
     //on android back button press
@@ -301,7 +304,7 @@ public class MainActivity extends AppCompatActivity
                         @Override
                         public void onBtnTohereClick(LatLng latLng, String name) {
                             listPoint[0] = mylocation;
-                            listPoint[1] =latLng;
+                            listPoint[1] = latLng;
                             bottomSearchResult.dismiss();
                             getFindStreetFragment(context);
                             ArrayList<LatLng> arrayList = new ArrayList<>();
@@ -574,7 +577,7 @@ public class MainActivity extends AppCompatActivity
             userEmail.setText(email);
             nav_logout.setTitle("Đăng xuất");
         }
-        getLocation();
+
         super.onResume();
     }
 
@@ -730,15 +733,35 @@ public class MainActivity extends AppCompatActivity
 
     //get mylocation
     public void getLocation() {
-        if (ContextCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) ==
-                PackageManager.PERMISSION_GRANTED &&
-                ContextCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_COARSE_LOCATION) ==
-                        PackageManager.PERMISSION_GRANTED) {
+
+        int MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+                && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+
+            Toast.makeText(this, "Chưa bật GPS!", Toast.LENGTH_LONG).show();
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
+            locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+
         } else {
-            Toast.makeText(getApplicationContext(), "Lỗi định vi", Toast.LENGTH_LONG).show();
+            locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 30, new MyLocationListener());
         }
-        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 30, new MyLocationListener());
+
+//        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//                requestPermissions(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION,Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.INTERNET}
+//                        ,10);
+//                locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+//                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 30, new MyLocationListener());
+//            }
+//
+//            return;
+//        }
+
+
+//        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+//        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 30, new MyLocationListener());
 
     }
 

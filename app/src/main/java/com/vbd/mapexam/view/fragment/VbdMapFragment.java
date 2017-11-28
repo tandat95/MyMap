@@ -3,21 +3,16 @@ package com.vbd.mapexam.view.fragment;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
-import android.support.design.widget.FloatingActionButton;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.vbd.mapexam.R;
-import com.vietbando.vietbandosdk.annotations.IconFactory;
-import com.vietbando.vietbandosdk.annotations.Marker;
-import com.vietbando.vietbandosdk.annotations.MarkerOptions;
 import com.vietbando.vietbandosdk.camera.CameraUpdateFactory;
 import com.vietbando.vietbandosdk.maps.MapView;
 import com.vietbando.vietbandosdk.maps.OnMapReadyCallback;
 import com.vietbando.vietbandosdk.maps.VietbandoMap;
 
-import static com.vbd.mapexam.view.activity.MainActivity.iconMylocation;
 import static com.vbd.mapexam.view.activity.MainActivity.mylocation;
 
 /**
@@ -27,7 +22,6 @@ import static com.vbd.mapexam.view.activity.MainActivity.mylocation;
 public class VbdMapFragment extends android.app.Fragment {
 
     public static  MapView mapView;
-    FloatingActionButton fabFindStreet;
     public static VietbandoMap map;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -40,10 +34,14 @@ public class VbdMapFragment extends android.app.Fragment {
             @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onMapReady(VietbandoMap vietbandoMap) {
+
             map = vietbandoMap;
             map.easeCamera(CameraUpdateFactory.newLatLngZoom(mylocation, 15), 500);
-            iconMylocation= IconFactory.getInstance(getContext()).fromResource(R.drawable.ic_start);
-            Marker markerMyLocation = map.addMarker(new MarkerOptions().position(mylocation).icon(iconMylocation));
+
+
+//            if (mylocation !=null){
+//                Marker markerMyLocation = map.addMarker(new MarkerOptions().position(mylocation).icon(iconMylocation));
+//            }
             }
         });
         return view;
